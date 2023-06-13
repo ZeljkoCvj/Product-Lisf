@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <div class="logo-wrapper">
+    <a routerLink="/prodlist" *ngIf="isAuth">Product</a>
+    <mat-icon *ngIf="!isAuth">dns</mat-icon>
+  </div>
+
+  <div class="nav-items-wrapper">
+    <a routerLink="/singup" *ngIf="!isAuth">Signup</a>
+    <a routerLink="/" *ngIf="!isAuth">Login</a>
+    <a routerLink="/addProduct" *ngIf="isAuth">Add Product</a>
+    <a *ngIf="isAuth" (click)="logout()">Logout</a>
+  </div>
+</mat-toolbar>

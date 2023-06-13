@@ -1,0 +1,148 @@
+<div class="mainDiv">
+  <div class="flex-container">
+    <div class="left-div">
+      <h2>Infomation</h2>
+      <form
+        [formGroup]="addProductForm"
+        (ngSubmit)="onSubmit()"
+        class="create-form"
+      >
+        <mat-form-field appearance="fill">
+          <mat-label>Category</mat-label>
+          <input required id="category" matInput formControlName="category" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('category')?.invalid &&
+              addProductForm.get('category')?.touched
+            "
+          >
+            Category is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input
+            required
+            id="description"
+            matInput
+            formControlName="description"
+          />
+          <mat-error
+            *ngIf="
+              addProductForm.get('description')?.invalid &&
+              addProductForm.get('description')?.touched
+            "
+          >
+            Description is required.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input required id="name" matInput formControlName="name" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('name')?.invalid &&
+              addProductForm.get('name')?.touched
+            "
+          >
+            Name is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input required id="price" matInput formControlName="price" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('price')?.invalid &&
+              addProductForm.get('price')?.touched
+            "
+          >
+            Price is required.
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="right-div">
+      <form
+        [formGroup]="addProductForm.controls.details"
+        class="create-form"
+        (ngSubmit)="onSubmit()"
+      >
+        <h2>Details</h2>
+        <mat-form-field appearance="fill">
+          <mat-label>Brand</mat-label>
+          <input required id="brand" matInput formControlName="brand" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('details.brand')?.invalid &&
+              addProductForm.get('details.brand')?.touched
+            "
+          >
+            Brand is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Color</mat-label>
+          <input required id="color" matInput formControlName="color" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('details.color')?.invalid &&
+              addProductForm.get('details.color')?.touched
+            "
+          >
+            Color is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Model</mat-label>
+          <input required id="model" matInput formControlName="model" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('details.model')?.invalid &&
+              addProductForm.get('details.model')?.touched
+            "
+          >
+            Model is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Weight</mat-label>
+          <input required id="weight" matInput formControlName="weight" />
+          <mat-error
+            *ngIf="
+              addProductForm.get('details.weight')?.invalid &&
+              addProductForm.get('details.weight')?.touched
+            "
+          >
+            Weight is required.
+          </mat-error>
+        </mat-form-field>
+        <div class="btnfield">
+          <button
+            [disabled]="!addProductForm.valid"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [mat-dialog-close]="true"
+          >
+            Submit
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [mat-dialog-close]="false"
+            cdkFocusInitial
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

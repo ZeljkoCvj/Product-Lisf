@@ -3,6 +3,7 @@ export interface Root {
 }
 
 export interface Product {
+  value: any;
   id: number;
   name: string;
   description: string;

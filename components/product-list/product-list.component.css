@@ -4,12 +4,12 @@
   padding: 0 10rem;
   gap: 12px;
   margin-top: 3rem;
-
-  .example-card {
-    cursor: pointer;
-  }
 }
+.list .example-card {
+  cursor: pointer;
+}
+
 .buttonholder {
   display: flex;
   justify-content: flex-end;
-}
+}/*# sourceMappingURL=product-list.component.css.map */

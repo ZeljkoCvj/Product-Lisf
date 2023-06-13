@@ -1,1 +1,37 @@
-<p>product-list works!</p>
+<div class="productList">
+  <div class="list">
+    <mat-card
+      class="example-card"
+      *ngFor="let item of (products | async)?.products"
+      routerLink="/detailProduct"
+      (click)="openDetail(item.id)"
+    >
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ item.category }}</mat-card-title>
+          <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+
+          <mat-card-content>
+            <p>{{ item.price }}$</p>
+          </mat-card-content>
+        </mat-card-title-group>
+      </mat-card-header>
+      <div class="buttonholder">
+        <button
+          matTooltip="Obrisi jedan proizvod"
+          mat-raised-button
+          (click)="openDialog($event, item.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          matTooltip="Izmeni sadrzaj"
+          mat-raised-button
+          (click)="openChangeDialog($event, item.id)"
+        >
+          <mat-icon>cached</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>
